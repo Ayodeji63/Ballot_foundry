@@ -19,9 +19,7 @@ contract HelperConfig is IHelperConfig {
 
     Voter[] public voters;
 
-    constructor() {}
-
-    function addVoters() public {
+    constructor() {
         voters.push(
             Voter({
                 firstName: "John",
@@ -356,6 +354,8 @@ contract HelperConfig is IHelperConfig {
         );
     }
 
+    function addVoters() public {}
+
     function presidentialNominationParameters() public view returns (string[] memory) {
         return partiestMetadata;
     }
@@ -367,5 +367,9 @@ contract HelperConfig is IHelperConfig {
 
     function getVoters(uint256 index) public view returns (Voter memory) {
         return voters[index];
+    }
+
+    function getVoterCount() public view returns (uint256) {
+        return voters.length;
     }
 }

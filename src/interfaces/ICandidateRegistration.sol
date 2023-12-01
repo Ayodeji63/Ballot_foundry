@@ -24,6 +24,4 @@ interface ICandidateRegistration {
         returns (PartyNomination memory);
 
     function incrementCandidateVoteCount(uint256 candidateId, uint256 stateId) external;
-
-    function getApproveCandidateCount() external view returns (uint256);
 }

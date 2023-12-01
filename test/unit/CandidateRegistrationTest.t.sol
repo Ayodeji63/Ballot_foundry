@@ -1,8 +1,8 @@
 // SPDX-License-Identifier: MIT
 
 import {Test, console} from "forge-std/Test.sol";
-import {CandidateRegistration} from "../src/CandidateRegistration.sol";
-import {HelperConfig} from "../script/HelperConfig.s.sol";
+import {CandidateRegistration} from "../../src/CandidateRegistration.sol";
+import {HelperConfig} from "../../script/HelperConfig.s.sol";
 
 pragma solidity ^0.8.18;
 

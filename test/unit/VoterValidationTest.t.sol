@@ -3,9 +3,9 @@
 pragma solidity ^0.8.18;
 
 import {Test, console} from "forge-std/Test.sol";
-import {VoterValidation} from "../src/VoterValidation.sol";
-import {HelperConfig} from "../script/HelperConfig.s.sol";
-import {IHelperConfig} from "../src/interfaces/IHelperConfig.sol";
+import {VoterValidation} from "../../src/VoterValidation.sol";
+import {HelperConfig} from "../../script/HelperConfig.s.sol";
+import {IHelperConfig} from "../../src/interfaces/IHelperConfig.sol";
 
 contract VoterValidationTest is Test, IHelperConfig {
     VoterValidation voterValidation;

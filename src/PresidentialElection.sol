@@ -92,7 +92,7 @@ contract PresidentialElection {
         require(stateId >= 1 && stateId <= 37, "Invalid state ID");
 
         uint256 totalVotes = 0;
-        for (uint256 candidateId = 0; candidateId < CandidateRegistration.getApproveCandidateCount(); candidateId++) {
+        for (uint256 candidateId = 0; candidateId < CandidateRegistration.getNominationCount(); candidateId++) {
             totalVotes += CandidateRegistration.getCandidatePerState(stateId, candidateId).voteCount;
         }
 
@@ -108,7 +108,7 @@ contract PresidentialElection {
         uint256 winnerCandidateId;
 
         // Step 1: Calculate Total Votes and Candidate with Highest Votes
-        for (candidateId = 0; candidateId < CandidateRegistration.getApproveCandidateCount(); candidateId++) {
+        for (candidateId = 0; candidateId < CandidateRegistration.getNominationCount(); candidateId++) {
             uint256 totalCandidateVotes = 0;
             for (uint256 stateId = 1; stateId <= 37; stateId++) {
                 totalCandidateVotes += CandidateRegistration.getCandidatePerState(stateId, candidateId).voteCount;
@@ -143,7 +143,7 @@ contract PresidentialElection {
     }
 
     function getTotalVotes() external view returns (uint256 totalVotes) {
-        for (uint256 candidateId = 0; candidateId < CandidateRegistration.getApproveCandidateCount(); candidateId++) {
+        for (uint256 candidateId = 0; candidateId < CandidateRegistration.getNominationCount(); candidateId++) {
             totalVotes += candidateTotalVotes[candidateId];
         }
     }
